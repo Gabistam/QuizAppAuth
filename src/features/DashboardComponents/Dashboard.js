@@ -33,14 +33,15 @@ const Dashboard = () => {
 
   const data = [
     { id: '1', type: 'UserProfile', icon: 'person-circle-outline' },
-    { id: '2', type: 'UserMetrics', icon: 'analytics-outline' },
+    // { id: '2', type: 'UserMetrics', icon: 'analytics-outline' },
     { id: '3', type: 'RoadmapList', icon: 'map-outline' },
     { id: '4', type: 'ProjectList', icon: 'list-outline' },
+    { id: '5', type: 'QuizHomeScreen', icon: 'game-controller-outline' },
   ];
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
+      <Text style={styles.title}> 
         {userData ? `Welcome to the Dashboard, ${userData.username}! 🎉` : 'Loading... ⏳'}
       </Text>
       <ScrollView contentContainerStyle={styles.cardContainer}>

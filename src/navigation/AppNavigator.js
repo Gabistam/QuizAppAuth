@@ -7,6 +7,11 @@ import ForgotPasswordScreen from '../features/AuthComponents/ForgotPassword';
 import UpdateProfile from '../features/AuthComponents/UpdateProfile';
 import UserProfile from '../features/DashboardComponents/UserProfile';
 import RoadmapList from '../features/RoadmapComponents/RoadmapList';
+import AllScoresScreen from '../features/QuizComponents/screens/AllScoresScreen';
+import QuizScreen from '../features/QuizComponents/screens/QuizScreen';
+import QuizSelectionScreen from '../features/QuizComponents/screens/QuizSelectionScreen';
+import HomeScreen from '../features/QuizComponents/screens/HomeScreen';
+import ResultScreen from '../features/QuizComponents/screens/ResultScreen';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +26,11 @@ const AppNavigator = () => {
         <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
         <Stack.Screen name="UserProfile" component={UserProfile} />
         <Stack.Screen name="RoadmapList" component={RoadmapList} />
+        <Stack.Screen name="AllScoresScreen" component={AllScoresScreen} />
+        <Stack.Screen name="QuizScreen" component={QuizScreen} />
+        <Stack.Screen name="QuizSelectionScreen" component={QuizSelectionScreen} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="ResultScreen" component={ResultScreen} />
       </Stack.Navigator>
   );
 };

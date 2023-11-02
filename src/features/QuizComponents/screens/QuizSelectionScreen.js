@@ -21,7 +21,7 @@ const QuizSelectionScreen = ({ navigation }) => {
   ]);
 
   const handleQuizSelection = (quizData) => {
-    // Naviguer vers le QuizScreen avec les données du quiz sélectionné
+    // Naviguer vers le Quiz avec les données du quiz sélectionné
     navigation.navigate('Quiz', { quizData });
   };
 

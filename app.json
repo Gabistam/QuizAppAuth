@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "quizAppAuth",
-    "slug": "quizAppAuth",
+    "slug": "quizappauth",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -25,6 +25,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8cb73796-c312-4e91-922e-7332f4bc7d6f"
+      }
+    },
+    "owner": "gabistam"
   }
 }

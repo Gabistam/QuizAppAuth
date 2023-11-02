@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, StyleSheet } from 'react-native';
 import QuestionCard from '../components/QuestionCard';
 import ScoreBoard from '../components/ScoreBoard';
@@ -18,14 +18,34 @@ const QuizScreen = ({ route, navigation }) => {
     if (nextQuestion < quizData?.questions?.length) {
       setCurrentQuestionIndex(nextQuestion);
     } else {
-      // Naviguer vers le QuizCompletedScreen avec le score final
+      // Naviguer vers le QuizCompleted avec le score final
       navigation.navigate('Result', { score, totalQuestions: quizData?.questions?.length, quizData });
     }
   };
+  const [timeLeft, setTimeLeft] = useState(120); // État pour suivre le temps restant
+
+  useEffect(() => {
+    // Si le temps est écoulé, passez à la question suivante
+    if (timeLeft === 0) {
+      handleAnswer(null);
+      return;
+    }
+
+    // Sinon, décrémentez le timer
+    const timer = setTimeout(() => {
+      setTimeLeft(prevTime => prevTime - 1);
+    }, 1000);
+
+    // Effacer le timer lors du nettoyage
+    return () => clearTimeout(timer);
+  }, [timeLeft, currentQuestionIndex]);
+
+
+
 
   return (
     <View style={styles.container}>
-      <ScoreBoard score={score} totalQuestions={quizData?.questions?.length} />
+      <ScoreBoard score={score} totalQuestions={quizData?.questions?.length} timeLeft={timeLeft} />
       <QuestionCard 
         question={quizData?.questions?.[currentQuestionIndex]?.question}
         options={quizData?.questions?.[currentQuestionIndex]?.options}

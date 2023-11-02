@@ -2,13 +2,14 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons'; // Assurez-vous d'installer @expo/vector-icons
 
-const ScoreBoard = ({ score, totalQuestions }) => {
+const ScoreBoard = ({ score, totalQuestions, timeLeft }) => {
   return (
     <View style={styles.scoreBoard}>
       <Text style={styles.scoreText}>Score: </Text>
       <Text style={styles.scoreValue}>{score}</Text>
       <Text style={styles.totalText}> / {totalQuestions}</Text>
-      <FontAwesome5 name="trophy" size={24} color="#FFD700" style={styles.trophyIcon} />
+      <FontAwesome5 name="trophy" size={24} color="#FFD700" style={styles.trophyIcon} /> 
+      <Text style={styles.timerText}>{timeLeft} sec</Text>
     </View>
   );
 };
@@ -41,6 +42,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   trophyIcon: {
+    marginLeft: 10,
+  },
+  timerText: {
+    color: 'white',
+    fontSize: 16,
     marginLeft: 10,
   },
 });

@@ -56,7 +56,7 @@ const ResultScreen = ({ route, navigation }) => {
       <Text style={styles.scoreText}>Votre score : {percentage}%</Text>
       <Text style={styles.commentText}>{comment}</Text>
       <Image source={{ uri: imageSource }} style={styles.image} />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('MyQuiz')}>
         <Text style={styles.buttonText}>Retour à l'accueil</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AllScores')}>

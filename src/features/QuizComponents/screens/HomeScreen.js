@@ -1,14 +1,16 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';  // Importez l'icône que vous souhaitez utiliser
+import { useNavigation } from '@react-navigation/native';
 
 const HomeScreen = ({ navigation }) => {
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Bienvenue au Quiz de Culture Pop 🎉</Text>
       <TouchableOpacity 
         style={styles.startButton} 
-        onPress={() => navigation.navigate('QuizSelection')}
+        onPress={() => navigation.navigate('MyQuiz')}
       >
         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
           <FontAwesome name="play" size={24} color="white" />
